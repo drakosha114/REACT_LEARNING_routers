@@ -3,22 +3,20 @@ import './AboutPage.less';
 import about from '../about.json';
 import Article from './Article.jsx';
 
-class About extends React.Component {
+const About = React.createClass ({
 
-    constructor(props) {
-        super(props);
-        this.state = {
+    getInitialState() {
+        return {
             content: about
-        };
-    };
-
+        }
+    },
     render(){
         return (
             <div className="AboutPage">
                {
                    this.state.content.map( (item) =>
                        <Article
-                            id={item.id}
+                           key={item.id}
                            title={item.title}
                            text={item.text}
                            imageURL={item.pictureURL}
@@ -26,8 +24,8 @@ class About extends React.Component {
                }
             </div>
         )
-    };
-}
+    }
+});
 
 export default About;
 

@@ -1,10 +1,8 @@
 import React from 'react';
 
-class Article extends React.Component {
-    constructor (props) {
-        super(props)
-    }
+const Article = React.createClass ({
     render () {
+
         const {title, text, imageURL} = this.props;
 
         return (
@@ -21,6 +19,6 @@ class Article extends React.Component {
             </div>
         )
     }
-}
+});
 
 export default Article;
